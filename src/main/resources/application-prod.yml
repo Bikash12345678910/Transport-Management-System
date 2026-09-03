@@ -1,12 +1,32 @@
+#spring:
+#  datasource:
+#    url: ${DB_URL:jdbc:mysql://localhost:3306/tmsdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: ${DB_USERNAME:root}
+#    password: ${DB_PASSWORD:root}
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#    hibernate:
+#      ddl-auto: validate
+#
+#  flyway:
+#    enabled: true
+#    baseline-on-migrate: true
+#
+#logging:
+#  level:
+#    com.tms: WARN
+
 spring:
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/tmsdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:root}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/tmsdb}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: validate
 
